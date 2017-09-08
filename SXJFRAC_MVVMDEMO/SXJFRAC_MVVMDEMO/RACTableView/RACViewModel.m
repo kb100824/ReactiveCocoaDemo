@@ -28,8 +28,8 @@
     for (NSInteger i =0; i<10; i++) {
         
         RACModel *model = [RACModel new];
-        model.title = [NSString stringWithFormat:@"title_%ld",i];
-        model.detail = [NSString stringWithFormat:@"detail_%ld",i];
+        model.title = [NSString stringWithFormat:@"RAC_MVVM_Title_%ld",i];
+        model.detail = [NSString stringWithFormat:@"RAC_MVVM_Detail_%ld",i];
         
         [tempArray addObject:model];
         
@@ -53,8 +53,8 @@
         for (NSInteger i =11; i<100; i++) {
             
             RACModel *model = [RACModel new];
-            model.title = [NSString stringWithFormat:@"title_%ld",i];
-            model.detail = [NSString stringWithFormat:@"detail_%ld",i];
+            model.title = [NSString stringWithFormat:@"RAC_MVVM_Title_%ld",i];
+            model.detail = [NSString stringWithFormat:@"RAC_MVVM_Detail_%ld",i];
             
             [tempArray addObject:model];
             
