@@ -22,7 +22,7 @@
 @implementation RACDataHelper
 
 
-- (instancetype)initWithCellIndentifier:(NSString *)cellIndentifier configureCompleteHandler:(RAC_ConfigureCompleteHandler)rac_CompleteHandler{
+- (instancetype)initWithCellIndentifier:(NSString *)cellIndentifier configureCompleteHandler:(RAC_ConfigureCompleteHandler)rac_CompleteHandler tableView_DidSelectRowCompleteHandler:(void(^)(RACSignal *tableViewSingal))selectRowCompleteHandler{
 
     if (self = [super init]) {
         
@@ -31,6 +31,11 @@
         //监听数据源与信号源绑定
         dataSingal = RACObserve(self, dataSoureArray);
         
+        if (selectRowCompleteHandler) {
+           
+         RACSignal *signal = [self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)];
+            selectRowCompleteHandler(signal);
+        }
         
     }
     
@@ -71,10 +76,10 @@
 
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
-
-
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//
+//   
+//
+//}
 
 @end

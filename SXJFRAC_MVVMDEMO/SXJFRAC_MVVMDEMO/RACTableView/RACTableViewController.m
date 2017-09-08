@@ -24,10 +24,16 @@ static NSString *celIdentifier = @"RACTableViewCell";
     [super viewDidLoad];
     
     self.dataHelper = [[RACDataHelper alloc]initWithCellIndentifier:celIdentifier configureCompleteHandler:^(RACTableViewCell *racCell, RACSignal *modelSingal) {
-        
         [racCell configureBindCellData:modelSingal];
         
+    } tableView_DidSelectRowCompleteHandler:^(RACSignal *tableViewSingal) {
         
+        [tableViewSingal subscribeNext:^(RACTuple *value) {
+            UITableView *tableView = value.first;
+            NSIndexPath *indexpath = value.second;
+            NSLog(@"SelectRow=%ld\n indexpath=%@",tableView.indexPathForSelectedRow.row,indexpath);
+            
+        }];
     }];
     
     //刚加载基本数据
