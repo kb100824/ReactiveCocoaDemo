@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface RACTableViewCell : UITableViewCell
-
+/**
+ ** @param modelSingal 信号源订阅遍历对应的model刷新UI控件
+ */
+- (void)configureBindCellData:(RACSignal *)modelSingal;
 @end

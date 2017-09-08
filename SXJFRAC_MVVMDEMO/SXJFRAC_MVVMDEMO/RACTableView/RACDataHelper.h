@@ -8,6 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RACDataHelper : NSObject
+@class RACTableViewCell;
+//返回cell,以及数据信号源
+ typedef void(^RAC_ConfigureCompleteHandler)(RACTableViewCell *racCell,RACSignal *modelSingal);
+
+@interface RACDataHelper : NSObject<UITableViewDelegate,UITableViewDataSource>
+
+//接收模拟网络请求回来的数据
+@property(nonatomic,copy) NSArray *dataSoureArray;
+
+/**
+ **  
+ ** @param cellIndentifier cell复用标识符
+ ** @rac_CompleteHandler  block回调
+ */
+- (instancetype)initWithCellIndentifier:(NSString *)cellIndentifier configureCompleteHandler:(RAC_ConfigureCompleteHandler)rac_CompleteHandler;
+
+
 
 @end

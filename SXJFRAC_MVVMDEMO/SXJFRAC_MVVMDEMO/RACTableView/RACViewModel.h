@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface RACViewModel : NSObject
+//模拟请求加载数据
++ (void)requestLoadDataCompleteHandler:(void(^)(NSArray *tempArray))dataCompleteHandler;
+//模拟请求加载更多数据
++ (void)requestLoadMoreDataCompleteHandler:(void(^)(NSArray *tempArray))dataCompleteHandler;
 
 @end

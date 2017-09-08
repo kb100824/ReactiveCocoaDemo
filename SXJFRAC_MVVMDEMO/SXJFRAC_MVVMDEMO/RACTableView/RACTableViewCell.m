@@ -7,7 +7,7 @@
 //
 
 #import "RACTableViewCell.h"
-
+#import "RACModel.h"
 
 @interface RACTableViewCell ()
 
@@ -29,6 +29,26 @@
     [super setSelected:selected animated:animated];
 
     
+}
+
+
+- (void)configureBindCellData:(RACSignal *)modelSingal{
+
+    
+    @weakify(self);
+    [modelSingal subscribeNext:^(RACModel *rac_Model) {
+        @strongify(self);
+        
+        self.lbl_title.text = rac_Model.title;
+        self.lbl_detail.text = rac_Model.detail;
+        
+        
+        
+        
+    }];
+    
+    
+
 }
 
 @end
