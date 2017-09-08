@@ -1,0 +1,16 @@
+//
+//  SXJFRAC_MVVMDEMO.pch
+//  SXJFRAC_MVVMDEMO
+//
+//  Created by shanlin on 2017/9/8.
+//  Copyright © 2017年 shanxingjinfu. All rights reserved.
+//
+
+#ifndef SXJFRAC_MVVMDEMO_pch
+#define SXJFRAC_MVVMDEMO_pch
+
+#import "ReactiveObjC.h"
+
+#import "RACmetamacros.h"
+
+#endif /* SXJFRAC_MVVMDEMO_pch */

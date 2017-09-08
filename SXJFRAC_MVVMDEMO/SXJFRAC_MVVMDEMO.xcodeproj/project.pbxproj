@@ -17,6 +17,11 @@
 		97EACA821F623DD5004133B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EACA801F623DD5004133B6 /* LaunchScreen.storyboard */; };
 		97EACA8D1F623DD5004133B6 /* SXJFRAC_MVVMDEMOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EACA8C1F623DD5004133B6 /* SXJFRAC_MVVMDEMOTests.m */; };
 		97EACA981F623DD5004133B6 /* SXJFRAC_MVVMDEMOUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EACA971F623DD5004133B6 /* SXJFRAC_MVVMDEMOUITests.m */; };
+		97EACAA81F6242FB004133B6 /* RACTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EACAA71F6242FB004133B6 /* RACTableViewController.m */; };
+		97EACAAE1F624470004133B6 /* RACTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EACAAD1F624470004133B6 /* RACTableViewCell.m */; };
+		97EACAB21F6244C3004133B6 /* RACViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EACAB11F6244C3004133B6 /* RACViewModel.m */; };
+		97EACAB51F6244E8004133B6 /* RACDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EACAB41F6244E8004133B6 /* RACDataHelper.m */; };
+		97EACAB81F6244F8004133B6 /* RACModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EACAB71F6244F8004133B6 /* RACModel.m */; };
 		F78AE736157B4C8F6B131AD8 /* libPods-SXJFRAC_MVVMDEMOUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 739A3E387C97EBC5EF46AADC /* libPods-SXJFRAC_MVVMDEMOUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +66,17 @@
 		97EACA931F623DD5004133B6 /* SXJFRAC_MVVMDEMOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SXJFRAC_MVVMDEMOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97EACA971F623DD5004133B6 /* SXJFRAC_MVVMDEMOUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SXJFRAC_MVVMDEMOUITests.m; sourceTree = "<group>"; };
 		97EACA991F623DD5004133B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97EACAA61F6242FB004133B6 /* RACTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACTableViewController.h; sourceTree = "<group>"; };
+		97EACAA71F6242FB004133B6 /* RACTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACTableViewController.m; sourceTree = "<group>"; };
+		97EACAAC1F624470004133B6 /* RACTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACTableViewCell.h; sourceTree = "<group>"; };
+		97EACAAD1F624470004133B6 /* RACTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACTableViewCell.m; sourceTree = "<group>"; };
+		97EACAB01F6244C3004133B6 /* RACViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACViewModel.h; sourceTree = "<group>"; };
+		97EACAB11F6244C3004133B6 /* RACViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACViewModel.m; sourceTree = "<group>"; };
+		97EACAB31F6244E8004133B6 /* RACDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACDataHelper.h; sourceTree = "<group>"; };
+		97EACAB41F6244E8004133B6 /* RACDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACDataHelper.m; sourceTree = "<group>"; };
+		97EACAB61F6244F8004133B6 /* RACModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACModel.h; sourceTree = "<group>"; };
+		97EACAB71F6244F8004133B6 /* RACModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACModel.m; sourceTree = "<group>"; };
+		97EACABA1F62461D004133B6 /* SXJFRAC_MVVMDEMO.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SXJFRAC_MVVMDEMO.pch; sourceTree = "<group>"; };
 		CF7A9E39D2EFC0FC63A9040F /* libPods-SXJFRAC_MVVMDEMOTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SXJFRAC_MVVMDEMOTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6DABF3507BBC3D0BFA0F8DF /* Pods-SXJFRAC_MVVMDEMO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXJFRAC_MVVMDEMO.release.xcconfig"; path = "Pods/Target Support Files/Pods-SXJFRAC_MVVMDEMO/Pods-SXJFRAC_MVVMDEMO.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +157,7 @@
 		97EACA711F623DD5004133B6 /* SXJFRAC_MVVMDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				97EACAA51F6242DA004133B6 /* RACTableView */,
 				97EACA751F623DD5004133B6 /* AppDelegate.h */,
 				97EACA761F623DD5004133B6 /* AppDelegate.m */,
 				97EACA781F623DD5004133B6 /* ViewController.h */,
@@ -158,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				97EACA731F623DD5004133B6 /* main.m */,
+				97EACABA1F62461D004133B6 /* SXJFRAC_MVVMDEMO.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -178,6 +196,63 @@
 				97EACA991F623DD5004133B6 /* Info.plist */,
 			);
 			path = SXJFRAC_MVVMDEMOUITests;
+			sourceTree = "<group>";
+		};
+		97EACAA51F6242DA004133B6 /* RACTableView */ = {
+			isa = PBXGroup;
+			children = (
+				97EACAB91F624567004133B6 /* viewcontroller */,
+				97EACAAF1F62447C004133B6 /* Model */,
+				97EACAAB1F62439A004133B6 /* helper */,
+				97EACAAA1F624389004133B6 /* ViewModel */,
+				97EACAA91F624383004133B6 /* view */,
+			);
+			path = RACTableView;
+			sourceTree = "<group>";
+		};
+		97EACAA91F624383004133B6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				97EACAAC1F624470004133B6 /* RACTableViewCell.h */,
+				97EACAAD1F624470004133B6 /* RACTableViewCell.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		97EACAAA1F624389004133B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				97EACAB01F6244C3004133B6 /* RACViewModel.h */,
+				97EACAB11F6244C3004133B6 /* RACViewModel.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		97EACAAB1F62439A004133B6 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				97EACAB31F6244E8004133B6 /* RACDataHelper.h */,
+				97EACAB41F6244E8004133B6 /* RACDataHelper.m */,
+			);
+			name = helper;
+			sourceTree = "<group>";
+		};
+		97EACAAF1F62447C004133B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				97EACAB61F6244F8004133B6 /* RACModel.h */,
+				97EACAB71F6244F8004133B6 /* RACModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		97EACAB91F624567004133B6 /* viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				97EACAA61F6242FB004133B6 /* RACTableViewController.h */,
+				97EACAA71F6242FB004133B6 /* RACTableViewController.m */,
+			);
+			name = viewcontroller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,9 +544,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97EACAAE1F624470004133B6 /* RACTableViewCell.m in Sources */,
+				97EACAB21F6244C3004133B6 /* RACViewModel.m in Sources */,
+				97EACAA81F6242FB004133B6 /* RACTableViewController.m in Sources */,
 				97EACA7A1F623DD5004133B6 /* ViewController.m in Sources */,
+				97EACAB81F6244F8004133B6 /* RACModel.m in Sources */,
 				97EACA771F623DD5004133B6 /* AppDelegate.m in Sources */,
 				97EACA741F623DD5004133B6 /* main.m in Sources */,
+				97EACAB51F6244E8004133B6 /* RACDataHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +637,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SXJFRAC_MVVMDEMO/SXJFRAC_MVVMDEMO.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -603,6 +685,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SXJFRAC_MVVMDEMO/SXJFRAC_MVVMDEMO.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -709,6 +793,7 @@
 				97EACA9E1F623DD5004133B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97EACA9F1F623DD5004133B6 /* Build configuration list for PBXNativeTarget "SXJFRAC_MVVMDEMOTests" */ = {
 			isa = XCConfigurationList;
@@ -717,6 +802,7 @@
 				97EACAA11F623DD5004133B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97EACAA21F623DD5004133B6 /* Build configuration list for PBXNativeTarget "SXJFRAC_MVVMDEMOUITests" */ = {
 			isa = XCConfigurationList;
@@ -725,6 +811,7 @@
 				97EACAA41F623DD5004133B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
