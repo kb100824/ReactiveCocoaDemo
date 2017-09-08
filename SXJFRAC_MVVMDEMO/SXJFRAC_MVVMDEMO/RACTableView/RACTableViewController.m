@@ -28,10 +28,11 @@ static NSString *celIdentifier = @"RACTableViewCell";
         
     } tableView_DidSelectRowCompleteHandler:^(RACSignal *tableViewSingal) {
         
-        [tableViewSingal subscribeNext:^(RACTuple *value) {
-            UITableView *tableView = value.first;
-            NSIndexPath *indexpath = value.second;
-            NSLog(@"SelectRow=%ld\n indexpath=%@",tableView.indexPathForSelectedRow.row,indexpath);
+        [tableViewSingal subscribeNext:^(RACTuple *tuple) {
+            //因为是绑定didSelectRowAtIndexPath代理函数只有两个参数所以这只需要first和second
+            UITableView *tableView = tuple.first;
+            NSIndexPath *indexpath = tuple.second;
+            NSLog(@"selectRow=%ld\n indexpath=%@",tableView.indexPathForSelectedRow.row,indexpath);
             
         }];
     }];
