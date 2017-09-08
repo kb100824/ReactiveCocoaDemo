@@ -4,7 +4,7 @@
 
 
 #RACTableViewController控制器源码:
-、、、
+```
 
 
 static NSString *celIdentifier = @"RACTableViewCell";
@@ -82,22 +82,22 @@ static NSString *celIdentifier = @"RACTableViewCell";
 
 
 
-、、、
+```
 
 
 
 #RACModel模型源码:
-、、、
+```
 @interface RACModel : NSObject
 
 @property(nonatomic,copy) NSString *title;
 @property(nonatomic,copy) NSString *detail;
 @end
-、、、
+```
 
 
 #RACViewModel源码:
-、、、
+```
 @interface RACViewModel : NSObject
 //模拟请求加载数据
 + (void)requestLoadDataCompleteHandler:(void(^)(NSArray *tempArray))dataCompleteHandler;
@@ -159,10 +159,10 @@ static NSString *celIdentifier = @"RACTableViewCell";
     });
 
 }
-、、、
+```
 
 #RACDataHelper源码：
-、、、
+```
 @class RACTableViewCell;
 //返回cell,以及数据信号源
  typedef void(^RAC_ConfigureCompleteHandler)(RACTableViewCell *racCell,RACSignal *modelSingal);
@@ -249,10 +249,10 @@ static NSString *celIdentifier = @"RACTableViewCell";
 
 
 }
-、、、
+```
 
 #RACTableViewCell源码:
-、、、
+```
 @interface RACTableViewCell : UITableViewCell
 /**
  ** @param modelSingal 信号源订阅遍历对应的model刷新UI控件
@@ -304,8 +304,7 @@ static NSString *celIdentifier = @"RACTableViewCell";
     
 
 }
-、、、
-
+```
 
 
 
