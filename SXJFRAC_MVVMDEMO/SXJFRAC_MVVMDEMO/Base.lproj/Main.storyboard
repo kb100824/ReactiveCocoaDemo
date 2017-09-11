@@ -126,23 +126,47 @@
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="duL-mC-AqS">
+                                <rect key="frame" x="177" y="291" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="7Ds-kc-Tvb"/>
+                                    <constraint firstAttribute="height" constant="20" id="q8k-QY-rJg"/>
+                                </constraints>
+                                <color key="color" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUE-v4-vaQ">
+                                <rect key="frame" x="22" y="368" width="337" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fZZ-C9-PKO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="duL-mC-AqS" firstAttribute="centerY" secondItem="1Ol-l1-dif" secondAttribute="centerY" id="6bg-Kk-al5"/>
                             <constraint firstItem="HtM-pJ-o5I" firstAttribute="top" secondItem="dhu-WH-6mX" secondAttribute="bottom" constant="59" id="AsX-Nf-8CK"/>
                             <constraint firstAttribute="trailing" secondItem="HtM-pJ-o5I" secondAttribute="trailing" constant="16" id="CCh-gw-34R"/>
                             <constraint firstItem="Glf-vX-Y6J" firstAttribute="top" secondItem="zlf-5S-Mnw" secondAttribute="bottom" constant="30" id="CX6-5x-So8"/>
+                            <constraint firstItem="KUE-v4-vaQ" firstAttribute="leading" secondItem="1Ol-l1-dif" secondAttribute="leading" constant="22" id="FUu-vd-TtD"/>
                             <constraint firstItem="zlf-5S-Mnw" firstAttribute="leading" secondItem="1Ol-l1-dif" secondAttribute="leading" constant="16" id="KKD-Cw-Si0"/>
                             <constraint firstItem="zlf-5S-Mnw" firstAttribute="top" secondItem="HtM-pJ-o5I" secondAttribute="bottom" constant="37" id="NAg-gl-pFX"/>
                             <constraint firstItem="Glf-vX-Y6J" firstAttribute="leading" secondItem="1Ol-l1-dif" secondAttribute="leading" constant="16" id="TMs-Ne-WdW"/>
+                            <constraint firstItem="KUE-v4-vaQ" firstAttribute="top" secondItem="duL-mC-AqS" secondAttribute="bottom" constant="57" id="XFG-xc-WiN"/>
                             <constraint firstAttribute="trailing" secondItem="zlf-5S-Mnw" secondAttribute="trailing" constant="16" id="Z7C-zC-diP"/>
                             <constraint firstItem="HtM-pJ-o5I" firstAttribute="leading" secondItem="1Ol-l1-dif" secondAttribute="leading" constant="16" id="ZoB-ot-ABT"/>
+                            <constraint firstAttribute="trailing" secondItem="KUE-v4-vaQ" secondAttribute="trailing" constant="16" id="eSh-A7-OTk"/>
+                            <constraint firstItem="duL-mC-AqS" firstAttribute="centerX" secondItem="1Ol-l1-dif" secondAttribute="centerX" id="fuj-Em-A6t"/>
                             <constraint firstAttribute="trailing" secondItem="Glf-vX-Y6J" secondAttribute="trailing" constant="16" id="iUv-HE-AlN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XBh-6E-0ti"/>
                     <connections>
                         <outlet property="btnLogin" destination="Glf-vX-Y6J" id="smO-2y-BDg"/>
+                        <outlet property="indicatorView" destination="duL-mC-AqS" id="scQ-MF-YrE"/>
+                        <outlet property="lblRemind" destination="KUE-v4-vaQ" id="JEY-pQ-wDW"/>
                         <outlet property="textField_UserName" destination="HtM-pJ-o5I" id="J5M-8l-w55"/>
                         <outlet property="textField_UserPwd" destination="zlf-5S-Mnw" id="6t5-jo-Fhx"/>
                     </connections>
