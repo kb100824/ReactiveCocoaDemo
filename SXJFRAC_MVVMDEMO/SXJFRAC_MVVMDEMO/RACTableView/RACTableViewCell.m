@@ -14,8 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbl_title;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_detail;
 
-
-
 @end
 
 @implementation RACTableViewCell

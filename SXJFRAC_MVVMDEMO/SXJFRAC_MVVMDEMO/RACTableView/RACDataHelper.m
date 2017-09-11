@@ -21,8 +21,15 @@
 @end
 @implementation RACDataHelper
 
+- (NSMutableArray *)dataSoureArray{
 
-- (instancetype)initWithCellIndentifier:(NSString *)cellIndentifier configureCompleteHandler:(RAC_ConfigureCompleteHandler)rac_CompleteHandler tableView_DidSelectRowCompleteHandler:(void(^)(RACSignal *tableViewSingal))selectRowCompleteHandler{
+    if (!_dataSoureArray) {
+        _dataSoureArray = [NSMutableArray array];
+    }
+    return _dataSoureArray;
+}
+- (instancetype)initWithCellIndentifier:(NSString *)cellIndentifier configureCompleteHandler:(RAC_ConfigureCompleteHandler)rac_CompleteHandler
+  tableView_DidSelectRowCompleteHandler:(void(^)(RACSignal *tableViewSingal))selectRowCompleteHandler{
 
     if (self = [super init]) {
         
@@ -30,12 +37,48 @@
         tempCompleteHandler = [rac_CompleteHandler copy];
         //监听数据源与信号源绑定
         dataSingal = RACObserve(self, dataSoureArray);
+        //绑定didSelectRowAtIndexPath代理函数
+        if (selectRowCompleteHandler) {
+            
+            RACSignal *selectRowsignal = [self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)];
+            selectRowCompleteHandler(selectRowsignal);
+        }
         
+               
+        
+        
+        
+        
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithCellIndentifier:(NSString *)cellIndentifier configureCompleteHandler:(RAC_ConfigureCompleteHandler)rac_CompleteHandler tableView_DidSelectRowCompleteHandler:(void(^)(RACSignal *tableViewSingal))selectRowCompleteHandler deleteCellRowCompleteHandler:(void(^)(RACSignal *cellSingal))cellRowCompleteHandler{
+
+    if (self = [super init]) {
+        
+        tempCellIndentifier = cellIndentifier;
+        tempCompleteHandler = [rac_CompleteHandler copy];
+        //监听数据源与信号源绑定
+        dataSingal = RACObserve(self, dataSoureArray);
+        //绑定didSelectRowAtIndexPath代理函数
         if (selectRowCompleteHandler) {
            
-         RACSignal *signal = [self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)];
-            selectRowCompleteHandler(signal);
+         RACSignal *selectRowsignal = [self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)];
+            selectRowCompleteHandler(selectRowsignal);
         }
+        
+        //绑定tableView:commitEditingStyle:forRowAtIndexPath:代理函数
+        
+        if (cellRowCompleteHandler) {
+            RACSignal *deleteRowsignal = [self rac_signalForSelector:@selector(tableView:commitEditingStyle:forRowAtIndexPath:) fromProtocol:@protocol(UITableViewDataSource)];
+            cellRowCompleteHandler(deleteRowsignal);
+        }
+        
+        
+        
+        
         
     }
     
@@ -54,6 +97,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
     return 1;
     
 }
@@ -75,11 +119,14 @@
 
 
 }
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//
-//   
-//
-//}
+      return @"删除";
+}
+
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
 
 @end

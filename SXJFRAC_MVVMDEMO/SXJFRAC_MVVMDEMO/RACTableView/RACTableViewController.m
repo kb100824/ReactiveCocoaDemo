@@ -14,7 +14,7 @@ static NSString *celIdentifier = @"RACTableViewCell";
 @property (weak, nonatomic) IBOutlet UITableView *rac_tableView;
 
 @property(nonatomic,strong)  NSMutableArray *requestDataArray;
-@property(nonatomic,strong)RACDataHelper *dataHelper;
+@property(nonatomic,strong)  RACDataHelper *dataHelper;
 
 @end
 
@@ -23,11 +23,18 @@ static NSString *celIdentifier = @"RACTableViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    @weakify(self);
+    
+   
+     
+    
+    
+    
     self.dataHelper = [[RACDataHelper alloc]initWithCellIndentifier:celIdentifier configureCompleteHandler:^(RACTableViewCell *racCell, RACSignal *modelSingal) {
-        [racCell configureBindCellData:modelSingal];
+         [racCell configureBindCellData:modelSingal];
         
     } tableView_DidSelectRowCompleteHandler:^(RACSignal *tableViewSingal) {
-        
         [tableViewSingal subscribeNext:^(RACTuple *tuple) {
             //因为是绑定didSelectRowAtIndexPath代理函数只有两个参数所以这只需要first和second
             UITableView *tableView = tuple.first;
@@ -35,17 +42,55 @@ static NSString *celIdentifier = @"RACTableViewCell";
             NSLog(@"selectRow=%ld\n indexpath=%@",tableView.indexPathForSelectedRow.row,indexpath);
             
         }];
+
+        
+    } deleteCellRowCompleteHandler:^(RACSignal *cellSingal) {
+        
+        
+        [cellSingal subscribeNext:^(RACTuple *celltuple) {
+            
+            @strongify(self);
+            //获取UITableViewCellEditingStyle样式类型
+            NSInteger cellCommitStyleType = [celltuple.second integerValue];
+            //获取cell当前行
+            NSIndexPath *cellIndexPath = celltuple.third;
+            if (cellCommitStyleType==UITableViewCellEditingStyleDelete) {
+            
+               
+                if (self.dataHelper.dataSoureArray.count) {
+                    [self.dataHelper.dataSoureArray removeObjectAtIndex:cellIndexPath.row];
+                    [self.rac_tableView deleteRowsAtIndexPaths:@[cellIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+                    
+                    [self.rac_tableView reloadData];
+                    
+
+                }
+
+                
+                
+            }
+            
+            
+            
+            
+           
+            
+        }];
+        
+        
     }];
     
     //刚加载基本数据
-    @weakify(self);
+    
     [RACViewModel requestLoadDataCompleteHandler:^(NSArray *tempArray) {
         @strongify(self);
         
-        self.dataHelper.dataSoureArray = tempArray;
+       
         
         [self.requestDataArray addObjectsFromArray:tempArray];
+       
         
+        self.dataHelper.dataSoureArray = self.requestDataArray;
         
     }];
     
@@ -53,15 +98,7 @@ static NSString *celIdentifier = @"RACTableViewCell";
     self.rac_tableView.dataSource = self.dataHelper;
     self.rac_tableView.delegate = self.dataHelper;
     
-    //模拟添加更多数据
-    [RACViewModel requestLoadMoreDataCompleteHandler:^(NSArray *tempArray) {
-        
-         @strongify(self);
-         [self.requestDataArray addObjectsFromArray:tempArray];
-        self.dataHelper.dataSoureArray = [self.requestDataArray copy];
-        [self.rac_tableView reloadData];
-    }];
-    
+       
     
     
     
