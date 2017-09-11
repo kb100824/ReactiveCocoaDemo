@@ -18,7 +18,8 @@
 @property(nonatomic,strong) NSMutableArray *dataSoureArray;
 
 /**
- ** tableViewCell点击行添加绑定信号源
+ ** tableViewCell点击行添加绑定信号源 
+ ** "use initWithCellIndentifier:tableView_DidSelectRowCompleteHandler:deleteCellRowCompleteHandler instead"
  * @param cellIndentifier cell复用标识符
  * @rac_CompleteHandler  block回调
  */
