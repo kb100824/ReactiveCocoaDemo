@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4FC1259D862DCC52F31A7E0A /* libPods-SXJFRAC_MVVMDEMOTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7A9E39D2EFC0FC63A9040F /* libPods-SXJFRAC_MVVMDEMOTests.a */; };
 		9446BB4EF59330C413F7DE9C /* libPods-SXJFRAC_MVVMDEMO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE40AF55E3BCC64B5439686 /* libPods-SXJFRAC_MVVMDEMO.a */; };
+		9700A2251F6670EC00B8A536 /* RACCommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9700A2241F6670EC00B8A536 /* RACCommandViewController.m */; };
+		9700A22A1F66733800B8A536 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9700A2291F66733800B8A536 /* LoginModel.m */; };
+		9700A22D1F66736A00B8A536 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9700A22C1F66736A00B8A536 /* LoginViewModel.m */; };
+		9700A2301F66738C00B8A536 /* RequestNetWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9700A22F1F66738C00B8A536 /* RequestNetWorkHelper.m */; };
 		97EACA741F623DD5004133B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EACA731F623DD5004133B6 /* main.m */; };
 		97EACA771F623DD5004133B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EACA761F623DD5004133B6 /* AppDelegate.m */; };
 		97EACA7A1F623DD5004133B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EACA791F623DD5004133B6 /* ViewController.m */; };
@@ -50,6 +54,14 @@
 		739A3E387C97EBC5EF46AADC /* libPods-SXJFRAC_MVVMDEMOUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SXJFRAC_MVVMDEMOUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC75CE001617C888B464B8 /* Pods-SXJFRAC_MVVMDEMO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SXJFRAC_MVVMDEMO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SXJFRAC_MVVMDEMO/Pods-SXJFRAC_MVVMDEMO.debug.xcconfig"; sourceTree = "<group>"; };
 		7DE40AF55E3BCC64B5439686 /* libPods-SXJFRAC_MVVMDEMO.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SXJFRAC_MVVMDEMO.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9700A2231F6670EC00B8A536 /* RACCommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACCommandViewController.h; sourceTree = "<group>"; };
+		9700A2241F6670EC00B8A536 /* RACCommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACCommandViewController.m; sourceTree = "<group>"; };
+		9700A2281F66733800B8A536 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		9700A2291F66733800B8A536 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		9700A22B1F66736A00B8A536 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
+		9700A22C1F66736A00B8A536 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
+		9700A22E1F66738C00B8A536 /* RequestNetWorkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestNetWorkHelper.h; sourceTree = "<group>"; };
+		9700A22F1F66738C00B8A536 /* RequestNetWorkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestNetWorkHelper.m; sourceTree = "<group>"; };
 		97EACA6F1F623DD5004133B6 /* SXJFRAC_MVVMDEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SXJFRAC_MVVMDEMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97EACA731F623DD5004133B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		97EACA751F623DD5004133B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -132,6 +144,53 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9700A2201F666DC100B8A536 /* RACCommand */ = {
+			isa = PBXGroup;
+			children = (
+				9700A2271F66731900B8A536 /* Model */,
+				9700A2261F66730900B8A536 /* RequestHelper */,
+				9700A2221F66707700B8A536 /* ViewControllers */,
+				9700A2211F66706B00B8A536 /* ViewModel */,
+			);
+			name = RACCommand;
+			sourceTree = "<group>";
+		};
+		9700A2211F66706B00B8A536 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9700A22B1F66736A00B8A536 /* LoginViewModel.h */,
+				9700A22C1F66736A00B8A536 /* LoginViewModel.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		9700A2221F66707700B8A536 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9700A2231F6670EC00B8A536 /* RACCommandViewController.h */,
+				9700A2241F6670EC00B8A536 /* RACCommandViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9700A2261F66730900B8A536 /* RequestHelper */ = {
+			isa = PBXGroup;
+			children = (
+				9700A22E1F66738C00B8A536 /* RequestNetWorkHelper.h */,
+				9700A22F1F66738C00B8A536 /* RequestNetWorkHelper.m */,
+			);
+			name = RequestHelper;
+			sourceTree = "<group>";
+		};
+		9700A2271F66731900B8A536 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9700A2281F66733800B8A536 /* LoginModel.h */,
+				9700A2291F66733800B8A536 /* LoginModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		97EACA661F623DD5004133B6 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +216,7 @@
 		97EACA711F623DD5004133B6 /* SXJFRAC_MVVMDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				9700A2201F666DC100B8A536 /* RACCommand */,
 				97EACAA51F6242DA004133B6 /* RACTableView */,
 				97EACA751F623DD5004133B6 /* AppDelegate.h */,
 				97EACA761F623DD5004133B6 /* AppDelegate.m */,
@@ -545,13 +605,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				97EACAAE1F624470004133B6 /* RACTableViewCell.m in Sources */,
+				9700A2251F6670EC00B8A536 /* RACCommandViewController.m in Sources */,
+				9700A22D1F66736A00B8A536 /* LoginViewModel.m in Sources */,
 				97EACAB21F6244C3004133B6 /* RACViewModel.m in Sources */,
+				9700A2301F66738C00B8A536 /* RequestNetWorkHelper.m in Sources */,
 				97EACAA81F6242FB004133B6 /* RACTableViewController.m in Sources */,
 				97EACA7A1F623DD5004133B6 /* ViewController.m in Sources */,
 				97EACAB81F6244F8004133B6 /* RACModel.m in Sources */,
 				97EACA771F623DD5004133B6 /* AppDelegate.m in Sources */,
 				97EACA741F623DD5004133B6 /* main.m in Sources */,
 				97EACAB51F6244E8004133B6 /* RACDataHelper.m in Sources */,
+				9700A22A1F66733800B8A536 /* LoginModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
