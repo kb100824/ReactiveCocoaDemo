@@ -327,7 +327,12 @@ static NSString *celIdentifier = @"RACTableViewCell";
 
 
 
+
+
+
+
 #RACCommand模拟登录demo
+
 ##LoginViewModel核心源码如下:
 ```
 #import <Foundation/Foundation.h>
@@ -396,6 +401,7 @@ static NSString *celIdentifier = @"RACTableViewCell";
 
 
 ```
+
 
 
 #效果图:
