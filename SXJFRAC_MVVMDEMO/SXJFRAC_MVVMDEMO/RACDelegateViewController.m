@@ -7,8 +7,10 @@
 //
 
 #import "RACDelegateViewController.h"
-
-@interface RACDelegateViewController ()
+#import "RACSecondViewController.h"
+@interface RACDelegateViewController ()<RACSubjectDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *lbl_Delegate;
+@property (weak, nonatomic) IBOutlet UIButton *btnPush;
 
 @end
 
@@ -16,22 +18,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+    
+    @weakify(self);
+    [[self rac_signalForSelector:@selector(testRACSubjectDelegate:) fromProtocol:@protocol(RACSubjectDelegate)]subscribeNext:^(RACTuple * tuple) {
+        //@strongify(self);
+        UIView *tempView = self.view;
+        
+        tempView.backgroundColor = [UIColor yellowColor];
+        
+        
+        NSLog(@"tuple=%@",tuple);
+    }];
+    
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [[self.btnPush rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
+       
+        @strongify(self);
+        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        RACSecondViewController *secondCtl = [sb instantiateViewControllerWithIdentifier:@"RACSecondViewController"];
+        
+        secondCtl.delegateSubject = [RACSubject subject];
+        secondCtl.racDelegate = self;
+        [secondCtl.delegateSubject subscribeNext:^(id  _Nullable x) {
+            
+            self.lbl_Delegate.text = x;
+        }];
+        
+        [self.navigationController pushViewController:secondCtl animated:YES];
+        
+    
+    }];
+    
+    
+    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
