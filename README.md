@@ -414,4 +414,70 @@ static NSString *celIdentifier = @"RACTableViewCell";
 
 
 
+#RAC替代Delegate传值
+##部分源码如下:
+
+```
+ @weakify(self);
+    [[self rac_signalForSelector:@selector(testRACSubjectDelegate:) fromProtocol:@protocol(RACSubjectDelegate)]subscribeNext:^(RACTuple * tuple) {
+        @strongify(self);
+        UIView *tempView = self.view;
+        
+        tempView.backgroundColor = [UIColor yellowColor];
+        
+        
+        NSLog(@"tuple=%@",tuple);
+    }];
+
+
+
+@class RACSubjectDelegate;
+@protocol RACSubjectDelegate <NSObject>
+@optional;
+- (void)testRACSubjectDelegate:(UIView*)currentView;
+
+@end
+
+@interface RACSecondViewController : UIViewController
+//用于传值
+@property(nonatomic,strong)RACSubject *delegateSubject;
+
+@property(nonatomic,weak)id<RACSubjectDelegate>racDelegate;
+
+@end
+ @weakify(self);
+    [[self.btnPop rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl *  x) {
+        @strongify(self);
+        
+        if (_delegateSubject) {
+           
+            [_delegateSubject sendNext:self.textField.text];
+            [_delegateSubject sendCompleted];
+        }
+        
+        
+        if (_racDelegate&&[_racDelegate respondsToSelector:@selector(testRACSubjectDelegate:)]) {
+            
+            [_racDelegate testRACSubjectDelegate:self.view];
+        }
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+        
+    }];
+
+
+
+
+```
+
+
+
+
+#效果图:
+
+
+
+![Image](https://github.com/KBvsMJ/ReactiveCocoaDemo/blob/master/SXJFRAC_MVVMDEMO/demo/3.gif)
+
 
