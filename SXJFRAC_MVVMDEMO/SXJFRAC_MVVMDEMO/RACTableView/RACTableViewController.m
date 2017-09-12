@@ -32,6 +32,8 @@ static NSString *celIdentifier = @"RACTableViewCell";
     
     
     self.dataHelper = [[RACDataHelper alloc]initWithCellIndentifier:celIdentifier configureCompleteHandler:^(RACTableViewCell *racCell, RACSignal *modelSingal) {
+        
+        
          [racCell configureBindCellData:modelSingal];
         
     } tableView_DidSelectRowCompleteHandler:^(RACSignal *tableViewSingal) {

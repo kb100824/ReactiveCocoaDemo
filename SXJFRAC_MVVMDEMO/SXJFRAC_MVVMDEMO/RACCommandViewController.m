@@ -33,6 +33,8 @@
    
     self.btnLogin.rac_command = self.loginViewModel.loginCommand;
   
+    
+    
     @weakify(self);
     [[self.loginViewModel.loginCommand executionSignals]subscribeNext:^(RACSignal *x) {
         @strongify(self);
@@ -65,6 +67,36 @@
     
     
     
+    RACCommand *command = [[RACCommand alloc]initWithSignalBlock:^RACSignal * _Nonnull(id   input) {
+        
+        
+        NSLog(@"input =%@",input);
+        
+        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+           
+            [subscriber sendNext:@"发送内容"];
+            [subscriber sendCompleted];
+            return [RACDisposable disposableWithBlock:^{
+                
+                NSLog(@"取消");
+            }];
+            
+        }];
+        
+    }];
+    
+    
+    [command.executionSignals subscribeNext:^(id  _Nullable x) {
+        
+       
+        NSLog(@"x=%@",x);
+    }];
+    
+    [[command.executionSignals switchToLatest]subscribeNext:^(id  _Nullable x) {
+        NSLog(@"x1=%@",x);
+        
+    }];
+    [command execute:@"rtewt"];
     
 }
 

@@ -34,6 +34,16 @@
 
     
     @weakify(self);
+//    [[modelSingal takeUntil:self.rac_prepareForReuseSignal]subscribeNext:^(RACModel *rac_Model) {
+//        
+//        @strongify(self);
+//        
+//        self.lbl_title.text = rac_Model.title;
+//        self.lbl_detail.text = rac_Model.detail;
+//
+//    }];
+    
+    
     [modelSingal subscribeNext:^(RACModel *rac_Model) {
         @strongify(self);
         
