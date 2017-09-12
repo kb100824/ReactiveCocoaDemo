@@ -60,7 +60,7 @@ static NSString *celIdentifier = @"RACTableViewCell";
         
          @strongify(self);
          [self.requestDataArray addObjectsFromArray:tempArray];
-        self.dataHelper.dataSoureArray = [self.requestDataArray copy];
+        self.dataHelper.dataSoureArray = self.requestDataArray;
         [self.rac_tableView reloadData];
     }];
     
