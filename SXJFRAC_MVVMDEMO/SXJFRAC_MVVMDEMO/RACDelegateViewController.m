@@ -42,9 +42,9 @@
         
         secondCtl.delegateSubject = [RACSubject subject];
         secondCtl.racDelegate = self;
-        [secondCtl.delegateSubject subscribeNext:^(id  _Nullable x) {
+        [secondCtl.delegateSubject subscribeNext:^(NSString *text) {
             
-            self.lbl_Delegate.text = x;
+            self.lbl_Delegate.text = text;
         }];
         
         [self.navigationController pushViewController:secondCtl animated:YES];
