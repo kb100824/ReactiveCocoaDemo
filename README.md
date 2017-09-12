@@ -237,10 +237,11 @@ static NSString *celIdentifier = @"RACTableViewCell";
     RACTableViewCell *rac_cell = [tableView dequeueReusableCellWithIdentifier:tempCellIndentifier forIndexPath:indexPath];
     
     if (tempCompleteHandler) {
-        tempCompleteHandler(rac_cell,[dataSingal map:^id (NSArray *tempArray) {
+        tempCompleteHandler(rac_cell,[[dataSingal takeUntil:rac_cell.rac_prepareForReuseSignal] map:^id (NSArray *tempArray) {
             //信号源映射返回对应行的model
             return [self.dataSoureArray objectAtIndex:indexPath.row];
         }]);
+
     }
     
     
