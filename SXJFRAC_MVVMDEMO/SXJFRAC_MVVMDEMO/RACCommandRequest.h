@@ -11,6 +11,7 @@
 @interface RACCommandRequest : NSObject
 /**
  *  使用RACCommand来发送网络请求
+ *   RACCommand中4个最重要的信号就是定义开头的那4个信号，executionSignals，executing，enabled，errors。需要注意的是，这4个信号基本都是（并不是完全是）在主线程上执行的
  *  @param urlString 接口url
  *  @param successCompleteHandler      请求成功回调
  *  @param failureCompleteHandler      请求失败回调
