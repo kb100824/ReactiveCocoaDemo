@@ -60,7 +60,7 @@ static NSString *celIdentifier = @"RACTableViewCell";
         
          @strongify(self);
          [self.requestDataArray addObjectsFromArray:tempArray];
-        self.dataHelper.dataSoureArray = [self.requestDataArray copy];
+        self.dataHelper.dataSoureArray = self.requestDataArray;
         [self.rac_tableView reloadData];
     }];
     
@@ -414,7 +414,12 @@ static NSString *celIdentifier = @"RACTableViewCell";
 
 
 
-#RAC替代Delegate传值
+
+
+
+
+
+#3---->RAC替代Delegate传值
 ##部分源码如下:
 
 ```
