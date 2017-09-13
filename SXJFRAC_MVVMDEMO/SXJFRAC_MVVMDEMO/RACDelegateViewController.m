@@ -23,11 +23,8 @@
     [[self rac_signalForSelector:@selector(testRACSubjectDelegate:) fromProtocol:@protocol(RACSubjectDelegate)]subscribeNext:^(RACTuple * tuple) {
         @strongify(self);
         UIView *tempView = self.view;
-        
         tempView.backgroundColor = [UIColor yellowColor];
         
-        
-        NSLog(@"tuple=%@",tuple);
     }];
     
 

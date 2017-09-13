@@ -4,7 +4,7 @@
 target 'SXJFRAC_MVVMDEMO' do
 
   pod 'ReactiveObjC'
-
+  #pod 'MLeaksFinder'
 
 
   target 'SXJFRAC_MVVMDEMOTests' do

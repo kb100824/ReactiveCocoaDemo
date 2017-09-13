@@ -13,6 +13,9 @@
 		9700A22A1F66733800B8A536 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9700A2291F66733800B8A536 /* LoginModel.m */; };
 		9700A22D1F66736A00B8A536 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9700A22C1F66736A00B8A536 /* LoginViewModel.m */; };
 		9700A2301F66738C00B8A536 /* RequestNetWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9700A22F1F66738C00B8A536 /* RequestNetWorkHelper.m */; };
+		972990341F69024300393D54 /* RACRequestNetWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 972990331F69024300393D54 /* RACRequestNetWorkViewController.m */; };
+		972990371F69039100393D54 /* RACCommandRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 972990361F69039100393D54 /* RACCommandRequest.m */; };
+		9729903A1F6903A400393D54 /* RACMulticastConnectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 972990391F6903A400393D54 /* RACMulticastConnectionRequest.m */; };
 		979FC0F91F676D08003AFCAE /* RACDelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 979FC0F81F676D08003AFCAE /* RACDelegateViewController.m */; };
 		979FC0FC1F6783CE003AFCAE /* RACSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 979FC0FB1F6783CE003AFCAE /* RACSecondViewController.m */; };
 		97EACA741F623DD5004133B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EACA731F623DD5004133B6 /* main.m */; };
@@ -64,6 +67,12 @@
 		9700A22C1F66736A00B8A536 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
 		9700A22E1F66738C00B8A536 /* RequestNetWorkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestNetWorkHelper.h; sourceTree = "<group>"; };
 		9700A22F1F66738C00B8A536 /* RequestNetWorkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestNetWorkHelper.m; sourceTree = "<group>"; };
+		972990321F69024300393D54 /* RACRequestNetWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACRequestNetWorkViewController.h; sourceTree = "<group>"; };
+		972990331F69024300393D54 /* RACRequestNetWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACRequestNetWorkViewController.m; sourceTree = "<group>"; };
+		972990351F69039100393D54 /* RACCommandRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACCommandRequest.h; sourceTree = "<group>"; };
+		972990361F69039100393D54 /* RACCommandRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACCommandRequest.m; sourceTree = "<group>"; };
+		972990381F6903A400393D54 /* RACMulticastConnectionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACMulticastConnectionRequest.h; sourceTree = "<group>"; };
+		972990391F6903A400393D54 /* RACMulticastConnectionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACMulticastConnectionRequest.m; sourceTree = "<group>"; };
 		979FC0F71F676D08003AFCAE /* RACDelegateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACDelegateViewController.h; sourceTree = "<group>"; };
 		979FC0F81F676D08003AFCAE /* RACDelegateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACDelegateViewController.m; sourceTree = "<group>"; };
 		979FC0FA1F6783CE003AFCAE /* RACSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSecondViewController.h; sourceTree = "<group>"; };
@@ -208,6 +217,44 @@
 			name = RACDelegate;
 			sourceTree = "<group>";
 		};
+		9729902E1F68C61F00393D54 /* TestDemo */ = {
+			isa = PBXGroup;
+			children = (
+				97EACA781F623DD5004133B6 /* ViewController.h */,
+				97EACA791F623DD5004133B6 /* ViewController.m */,
+			);
+			name = TestDemo;
+			sourceTree = "<group>";
+		};
+		9729902F1F69012F00393D54 /* RACMulticastConnection */ = {
+			isa = PBXGroup;
+			children = (
+				972990381F6903A400393D54 /* RACMulticastConnectionRequest.h */,
+				972990391F6903A400393D54 /* RACMulticastConnectionRequest.m */,
+			);
+			name = RACMulticastConnection;
+			sourceTree = "<group>";
+		};
+		972990301F69019B00393D54 /* RequestNetWork */ = {
+			isa = PBXGroup;
+			children = (
+				972990311F6901C500393D54 /* RACCommand */,
+				9729902F1F69012F00393D54 /* RACMulticastConnection */,
+				972990321F69024300393D54 /* RACRequestNetWorkViewController.h */,
+				972990331F69024300393D54 /* RACRequestNetWorkViewController.m */,
+			);
+			name = RequestNetWork;
+			sourceTree = "<group>";
+		};
+		972990311F6901C500393D54 /* RACCommand */ = {
+			isa = PBXGroup;
+			children = (
+				972990351F69039100393D54 /* RACCommandRequest.h */,
+				972990361F69039100393D54 /* RACCommandRequest.m */,
+			);
+			name = RACCommand;
+			sourceTree = "<group>";
+		};
 		97EACA661F623DD5004133B6 = {
 			isa = PBXGroup;
 			children = (
@@ -233,13 +280,13 @@
 		97EACA711F623DD5004133B6 /* SXJFRAC_MVVMDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				972990301F69019B00393D54 /* RequestNetWork */,
+				9729902E1F68C61F00393D54 /* TestDemo */,
 				971BF3841F676C76006B00AF /* RACDelegate */,
 				9700A2201F666DC100B8A536 /* RACCommand */,
 				97EACAA51F6242DA004133B6 /* RACTableView */,
 				97EACA751F623DD5004133B6 /* AppDelegate.h */,
 				97EACA761F623DD5004133B6 /* AppDelegate.m */,
-				97EACA781F623DD5004133B6 /* ViewController.h */,
-				97EACA791F623DD5004133B6 /* ViewController.m */,
 				97EACA7B1F623DD5004133B6 /* Main.storyboard */,
 				97EACA7E1F623DD5004133B6 /* Assets.xcassets */,
 				97EACA801F623DD5004133B6 /* LaunchScreen.storyboard */,
@@ -628,11 +675,14 @@
 				979FC0FC1F6783CE003AFCAE /* RACSecondViewController.m in Sources */,
 				97EACAB21F6244C3004133B6 /* RACViewModel.m in Sources */,
 				979FC0F91F676D08003AFCAE /* RACDelegateViewController.m in Sources */,
+				972990341F69024300393D54 /* RACRequestNetWorkViewController.m in Sources */,
 				9700A2301F66738C00B8A536 /* RequestNetWorkHelper.m in Sources */,
 				97EACAA81F6242FB004133B6 /* RACTableViewController.m in Sources */,
 				97EACA7A1F623DD5004133B6 /* ViewController.m in Sources */,
 				97EACAB81F6244F8004133B6 /* RACModel.m in Sources */,
 				97EACA771F623DD5004133B6 /* AppDelegate.m in Sources */,
+				972990371F69039100393D54 /* RACCommandRequest.m in Sources */,
+				9729903A1F6903A400393D54 /* RACMulticastConnectionRequest.m in Sources */,
 				97EACA741F623DD5004133B6 /* main.m in Sources */,
 				97EACAB51F6244E8004133B6 /* RACDataHelper.m in Sources */,
 				9700A22A1F66733800B8A536 /* LoginModel.m in Sources */,
