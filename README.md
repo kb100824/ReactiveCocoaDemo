@@ -486,3 +486,194 @@ static NSString *celIdentifier = @"RACTableViewCell";
 ![Image](https://github.com/KBvsMJ/ReactiveCocoaDemo/blob/master/SXJFRAC_MVVMDEMO/demo/3.gif)
 
 
+
+
+
+
+
+
+
+
+#4---->RACCommand模拟网络请求
+```
+@interface RACCommandRequest : NSObject
+/**
+ *  使用RACCommand来发送网络请求
+ *   RACCommand中4个最重要的信号就是定义开头的那4个信号，executionSignals，executing，enabled，errors。需要注意的是，这4个信号基本都是（并不是完全是）在主线程上执行的
+ *  @param urlString 接口url
+ *  @param successCompleteHandler      请求成功回调
+ *  @param failureCompleteHandler      请求失败回调
+ */
+
++ (void)rac_CommandRequestWithURLString:(NSString *)urlString
+                         rac_SuccessCompleteHandler:(void(^)(NSDictionary  *responseObject))successCompleteHandler rac_FailureCompleteHandler:(void(^)(NSError *error))failureCompleteHandler;
+                         
+                         
+                         
+  @implementation RACCommandRequest
+
++ (void)rac_CommandRequestWithURLString:(NSString *)urlString rac_SuccessCompleteHandler:(void (^)(NSDictionary *))successCompleteHandler rac_FailureCompleteHandler:(void (^)(NSError *))failureCompleteHandler{
+
+    RACCommand *raccommand = [[RACCommand alloc]initWithSignalBlock:^RACSignal * (id   input) {
+        
+        return [[RACSignal createSignal:^RACDisposable * (id<RACSubscriber>   subscriber) {
+            
+            NSURL *url = [NSURL URLWithString:urlString];
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+            NSURLSession *urlsession = [NSURLSession sharedSession];
+            NSURLSessionDataTask *dataTask = [urlsession dataTaskWithRequest:request completionHandler:^(NSData *  data, NSURLResponse *  response, NSError *  error) {
+                if (error) {
+                    [subscriber sendError:error];
+                }else{
+                    
+                    NSDictionary *resultDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                    
+                    [subscriber sendNext:resultDict];
+                    [subscriber sendCompleted];
+                    
+                }
+                
+                
+                
+                
+            }];
+            [dataTask resume];
+           
+         return  [RACDisposable disposableWithBlock:^{
+                
+             [dataTask cancel];
+            }]; //保证信号源主线程执行，不然导致ui无法刷新
+        }] deliverOn:[RACScheduler mainThreadScheduler]];
+    }];
+    
+    [raccommand.executionSignals subscribeNext:^(RACSignal *singal) {
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        [singal subscribeNext:^(NSDictionary *resultDict) {
+            
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+
+            if (successCompleteHandler) {
+                successCompleteHandler(resultDict);
+            }
+            
+            
+            
+        }];
+        
+    }];
+    
+    [raccommand.errors subscribeNext:^(NSError *error) {
+        
+        if (failureCompleteHandler) {
+            failureCompleteHandler(error);
+        }
+
+
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+       
+    }];
+    
+    [raccommand execute:@"test"];
+
+}
+                 
+                         
+ 
+
+```
+
+#5---->RACMulticastConnection模拟网络请求
+```
+@interface RACMulticastConnectionRequest : NSObject
+/**
+ *  
+ *  使用RACMulticastConnection来发送网络请求能解决信号每次订阅subscribeNext重复发起一次新的网络请求
+ *  @param urlString 接口url
+ *  @param successCompleteHandler      请求成功回调
+ *  @param failureCompleteHandler      请求失败回调
+ */
+
++ (void)rac_MulticastConnectionRequestWithURLString:(NSString *)urlString
+                         rac_SuccessCompleteHandler:(void(^)(NSDictionary  *responseObject))successCompleteHandler rac_FailureCompleteHandler:(void(^)(NSError *error))failureCompleteHandler;
+                         
+                         
+                         
+  @implementation RACMulticastConnectionRequest
++ (void)rac_MulticastConnectionRequestWithURLString:(NSString *)urlString rac_SuccessCompleteHandler:(void (^)(NSDictionary  *responseObject))successCompleteHandler rac_FailureCompleteHandler:(void (^)(NSError *))failureCompleteHandler{
+   
+    
+      NSAssert(urlString,@"请设置好服务器接口url");
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    RACMulticastConnection *connection = [[[RACSignal createSignal:^RACDisposable * (id<RACSubscriber> subscriber) {
+        
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSURLSession *urlsession = [NSURLSession sharedSession];
+        NSURLSessionDataTask *dataTask = [urlsession dataTaskWithRequest:request completionHandler:^(NSData *  data, NSURLResponse *  response, NSError *  error) {
+            if (error) {
+                [subscriber sendError:error];
+            }else{
+              
+                NSDictionary *resultDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                
+                [subscriber sendNext:resultDict];
+                [subscriber sendCompleted];
+            
+            }
+            
+            
+            
+            
+        }];
+        [dataTask resume];
+        
+        
+        
+        
+        return [RACDisposable disposableWithBlock:^{
+            
+            [dataTask cancel];
+            
+        }]; //保证信号源主线程执行，不然导致ui无法刷新
+    }] deliverOn:[RACScheduler mainThreadScheduler]]publish];
+    
+    
+    [connection.signal  subscribeNext:^(NSDictionary *resultDict) {
+        if (successCompleteHandler) {
+            successCompleteHandler(resultDict);
+        }
+         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    }];
+    
+    [connection.signal subscribeError:^(NSError *  error) {
+       
+        if (failureCompleteHandler) {
+            failureCompleteHandler(error);
+        }
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+
+    }];
+    
+    
+    [connection connect];
+    
+    
+
+
+}
+                     
+ 
+
+```
+
+
+
+
+
+#效果图:
+
+
+
+![Image](https://github.com/KBvsMJ/ReactiveCocoaDemo/blob/master/SXJFRAC_MVVMDEMO/demo/4.gif)
+
