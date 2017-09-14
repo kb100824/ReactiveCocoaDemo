@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--UITableView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RACTableViewController" sceneMemberID="viewController">
+                <viewController title="UITableView" id="BYZ-38-t0r" customClass="RACTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="-262" y="315"/>
         </scene>
-        <!--Delegate View Controller-->
+        <!--代理传值-->
         <scene sceneID="4mz-WY-KvA">
             <objects>
-                <viewController id="oa7-Tj-3Gw" customClass="RACDelegateViewController" sceneMemberID="viewController">
+                <viewController title="代理传值" id="oa7-Tj-3Gw" customClass="RACDelegateViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MoN-BY-72Q"/>
                         <viewControllerLayoutGuide type="bottom" id="lP4-xj-10J"/>
@@ -136,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="-479.19999999999999" y="1059.2203898050975"/>
         </scene>
-        <!--Command View Controller-->
+        <!--RACCommand登录-->
         <scene sceneID="RZz-bH-fPx">
             <objects>
-                <viewController id="Qr3-0J-qxf" customClass="RACCommandViewController" sceneMemberID="viewController">
+                <viewController title="RACCommand登录" id="Qr3-0J-qxf" customClass="RACCommandViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dhu-WH-6mX"/>
                         <viewControllerLayoutGuide type="bottom" id="9Yf-Th-hfE"/>
@@ -237,27 +237,27 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Nt7-fH-Lf4" kind="relationship" relationship="rootViewController" id="5DU-hq-INI"/>
+                        <segue destination="7ws-3L-Mnp" kind="relationship" relationship="rootViewController" id="kMW-p5-Yg6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiZ-KJ-Zwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2244" y="1050"/>
         </scene>
-        <!--Request Net Work View Controller-->
+        <!--网络请求-->
         <scene sceneID="wvO-zD-APX">
             <objects>
-                <viewController id="Nt7-fH-Lf4" customClass="RACRequestNetWorkViewController" sceneMemberID="viewController">
+                <viewController title="网络请求" id="Nt7-fH-Lf4" customClass="RACRequestNetWorkViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pyS-c7-gkU"/>
                         <viewControllerLayoutGuide type="bottom" id="Eiz-YP-C3D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Wc0-Au-JHS">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFp-gG-8WB">
-                                <rect key="frame" x="85" y="286" width="204" height="30"/>
+                                <rect key="frame" x="85" y="318.5" width="204" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9u0-nR-qlZ"/>
                                     <constraint firstAttribute="width" constant="204" id="an3-MD-lCQ"/>
@@ -265,7 +265,7 @@
                                 <state key="normal" title="RAC_Command网络请求"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3o-bm-oZU">
-                                <rect key="frame" x="16" y="220" width="343" height="21"/>
+                                <rect key="frame" x="16" y="252.5" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="kW8-wf-cDq"/>
                                 </constraints>
@@ -274,7 +274,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTm-kR-c0V">
-                                <rect key="frame" x="85" y="351" width="204" height="30"/>
+                                <rect key="frame" x="85" y="383.5" width="204" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="jHz-sQ-SAs"/>
                                 </constraints>
@@ -304,10 +304,10 @@
             </objects>
             <point key="canvasLocation" x="-1442.4000000000001" y="682.3088455772114"/>
         </scene>
-        <!--Second View Controller-->
+        <!--代理传值-->
         <scene sceneID="pSM-7d-Yfn">
             <objects>
-                <viewController storyboardIdentifier="RACSecondViewController" id="Np8-xl-htO" customClass="RACSecondViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RACSecondViewController" title="代理传值" id="Np8-xl-htO" customClass="RACSecondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lfa-g5-pHw"/>
                         <viewControllerLayoutGuide type="bottom" id="vCC-sh-RIN"/>
@@ -370,7 +370,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODb-t6-DM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1046" y="1819"/>
+            <point key="canvasLocation" x="-1193" y="1759"/>
+        </scene>
+        <!--Timer定时器-->
+        <scene sceneID="OZC-YO-TqF">
+            <objects>
+                <viewController title="Timer定时器" id="7ws-3L-Mnp" customClass="RACTimerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uCd-aS-cpF"/>
+                        <viewControllerLayoutGuide type="bottom" id="OcH-Ku-1yG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yRM-YN-72s">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJ3-Y5-4Tz">
+                                <rect key="frame" x="103" y="286.5" width="169" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="169" id="b8y-zH-3vf"/>
+                                    <constraint firstAttribute="height" constant="30" id="y3m-c1-lzK"/>
+                                </constraints>
+                                <state key="normal" title="获取验证码"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fY-Xt-0m6">
+                                <rect key="frame" x="16" y="240" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8fO-xc-RcW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8fY-Xt-0m6" secondAttribute="trailing" constant="16" id="41B-2A-W7m"/>
+                            <constraint firstItem="yJ3-Y5-4Tz" firstAttribute="centerX" secondItem="yRM-YN-72s" secondAttribute="centerX" id="OUj-FD-fkv"/>
+                            <constraint firstItem="8fY-Xt-0m6" firstAttribute="leading" secondItem="yRM-YN-72s" secondAttribute="leading" constant="16" id="VN2-1o-z5R"/>
+                            <constraint firstItem="yJ3-Y5-4Tz" firstAttribute="top" secondItem="8fY-Xt-0m6" secondAttribute="bottom" constant="25.5" id="Z7m-rL-5Xk"/>
+                            <constraint firstItem="yJ3-Y5-4Tz" firstAttribute="centerY" secondItem="yRM-YN-72s" secondAttribute="centerY" id="zi7-BT-UuD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zAu-MQ-Tv7"/>
+                    <connections>
+                        <outlet property="btnTimer" destination="yJ3-Y5-4Tz" id="z3U-m2-c2E"/>
+                        <outlet property="lblTimer" destination="8fY-Xt-0m6" id="QYN-D5-19V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gpu-9o-4v0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1932" y="1849.9250374812596"/>
         </scene>
     </scenes>
 </document>
