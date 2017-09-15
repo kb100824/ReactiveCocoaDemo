@@ -761,3 +761,82 @@ static NSString *celIdentifier = @"RACTableViewCell";
 
 ![Image](https://github.com/KBvsMJ/ReactiveCocoaDemo/blob/master/SXJFRAC_MVVMDEMO/demo/5.gif)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#7---->RACRefreshControl刷新控件
+
+```
+#import "RACRefreshControlViewController.h"
+
+@interface RACRefreshControlViewController ()
+
+@property (weak, nonatomic) IBOutlet UIScrollView *refreshScrollerview;
+
+@end
+
+@implementation RACRefreshControlViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+  
+    UIRefreshControl *refreshControl  = [[UIRefreshControl alloc]init];
+    //设置刷新控件颜色
+    RAC(refreshControl, tintColor) = [RACObserve(self.refreshScrollerview, contentOffset) map:^id (NSNumber   *value) {
+        
+        CGPoint piont = [value CGPointValue];
+        return piont.y<0.0?[UIColor redColor]:[UIColor yellowColor];
+        
+    }];
+    [[refreshControl rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(UIRefreshControl *refreshControl) {
+        
+        //模拟网络请求
+        [[RACScheduler mainThreadScheduler] afterDelay:5 schedule:^{
+            
+            [refreshControl endRefreshing];
+            
+        }];
+        
+    }];
+    
+
+    if(NSFoundationVersionNumber>=NSFoundationVersionNumber_iOS_9_x_Max){
+    self.refreshScrollerview.refreshControl = refreshControl;
+    }
+    
+    
+    
+    
+}
+
+
+
+
+```
+
+
+
+
+
+
+
+#效果图:
+
+
+
+![Image](https://github.com/KBvsMJ/ReactiveCocoaDemo/blob/master/SXJFRAC_MVVMDEMO/demo/6.gif)
+
+
