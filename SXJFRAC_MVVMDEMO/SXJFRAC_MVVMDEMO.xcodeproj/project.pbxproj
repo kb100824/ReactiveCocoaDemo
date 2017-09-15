@@ -19,6 +19,7 @@
 		9729903A1F6903A400393D54 /* RACMulticastConnectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 972990391F6903A400393D54 /* RACMulticastConnectionRequest.m */; };
 		979FC0F91F676D08003AFCAE /* RACDelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 979FC0F81F676D08003AFCAE /* RACDelegateViewController.m */; };
 		979FC0FC1F6783CE003AFCAE /* RACSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 979FC0FB1F6783CE003AFCAE /* RACSecondViewController.m */; };
+		97DCF9C71F6BE4B40043E501 /* RACRefreshControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DCF9C61F6BE4B40043E501 /* RACRefreshControlViewController.m */; };
 		97EACA741F623DD5004133B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EACA731F623DD5004133B6 /* main.m */; };
 		97EACA771F623DD5004133B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EACA761F623DD5004133B6 /* AppDelegate.m */; };
 		97EACA7A1F623DD5004133B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EACA791F623DD5004133B6 /* ViewController.m */; };
@@ -80,6 +81,8 @@
 		979FC0F81F676D08003AFCAE /* RACDelegateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACDelegateViewController.m; sourceTree = "<group>"; };
 		979FC0FA1F6783CE003AFCAE /* RACSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSecondViewController.h; sourceTree = "<group>"; };
 		979FC0FB1F6783CE003AFCAE /* RACSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACSecondViewController.m; sourceTree = "<group>"; };
+		97DCF9C51F6BE4B40043E501 /* RACRefreshControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACRefreshControlViewController.h; sourceTree = "<group>"; };
+		97DCF9C61F6BE4B40043E501 /* RACRefreshControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACRefreshControlViewController.m; sourceTree = "<group>"; };
 		97EACA6F1F623DD5004133B6 /* SXJFRAC_MVVMDEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SXJFRAC_MVVMDEMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97EACA731F623DD5004133B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		97EACA751F623DD5004133B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -267,6 +270,15 @@
 			name = RACCommand;
 			sourceTree = "<group>";
 		};
+		97DCF9C41F6BD1120043E501 /* RACRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				97DCF9C51F6BE4B40043E501 /* RACRefreshControlViewController.h */,
+				97DCF9C61F6BE4B40043E501 /* RACRefreshControlViewController.m */,
+			);
+			name = RACRefreshControl;
+			sourceTree = "<group>";
+		};
 		97EACA661F623DD5004133B6 = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +304,7 @@
 		97EACA711F623DD5004133B6 /* SXJFRAC_MVVMDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				97DCF9C41F6BD1120043E501 /* RACRefreshControl */,
 				9720A5B41F6A0CBE0091BFBB /* RACTimer */,
 				972990301F69019B00393D54 /* RequestNetWork */,
 				9729902E1F68C61F00393D54 /* TestDemo */,
@@ -690,6 +703,7 @@
 				97EACAB21F6244C3004133B6 /* RACViewModel.m in Sources */,
 				979FC0F91F676D08003AFCAE /* RACDelegateViewController.m in Sources */,
 				972990341F69024300393D54 /* RACRequestNetWorkViewController.m in Sources */,
+				97DCF9C71F6BE4B40043E501 /* RACRefreshControlViewController.m in Sources */,
 				9700A2301F66738C00B8A536 /* RequestNetWorkHelper.m in Sources */,
 				97EACAA81F6242FB004133B6 /* RACTableViewController.m in Sources */,
 				97EACA7A1F623DD5004133B6 /* ViewController.m in Sources */,
