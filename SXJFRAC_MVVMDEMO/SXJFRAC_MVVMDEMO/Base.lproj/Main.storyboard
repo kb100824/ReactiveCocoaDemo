@@ -237,7 +237,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Den-F4-k8b" kind="relationship" relationship="rootViewController" id="peL-oX-4xg"/>
+                        <segue destination="yRz-GA-YVs" kind="relationship" relationship="rootViewController" id="2H0-QF-c3x"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiZ-KJ-Zwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -370,7 +370,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODb-t6-DM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="1935"/>
+            <point key="canvasLocation" x="66" y="2115"/>
         </scene>
         <!--刷新RefreshControl-->
         <scene sceneID="RSm-UB-4NK">
@@ -431,7 +431,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Cs-gW-WsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1391.2" y="1950.6746626686659"/>
+            <point key="canvasLocation" x="-1842" y="2090"/>
+        </scene>
+        <!--ActionSheet选择-->
+        <scene sceneID="C9y-Jj-df5">
+            <objects>
+                <viewController title="ActionSheet选择" id="yRz-GA-YVs" customClass="RACActionSheetViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B73-Qi-D7b"/>
+                        <viewControllerLayoutGuide type="bottom" id="qjN-Ek-0Wy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RWv-2y-gfT">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JxP-iJ-5RR">
+                                <rect key="frame" x="131" y="286" width="113" height="30"/>
+                                <state key="normal" title="RACActionSheet"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbr-oK-0we">
+                                <rect key="frame" x="16" y="238" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="NRA-Q8-Lzv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JxP-iJ-5RR" firstAttribute="centerX" secondItem="RWv-2y-gfT" secondAttribute="centerX" id="Aki-xW-MRQ"/>
+                            <constraint firstItem="JxP-iJ-5RR" firstAttribute="centerY" secondItem="RWv-2y-gfT" secondAttribute="centerY" id="jfM-iE-W4r"/>
+                            <constraint firstAttribute="trailing" secondItem="Sbr-oK-0we" secondAttribute="trailing" constant="16" id="pD5-mh-wWm"/>
+                            <constraint firstItem="JxP-iJ-5RR" firstAttribute="top" secondItem="Sbr-oK-0we" secondAttribute="bottom" constant="27" id="vE6-qI-UkN"/>
+                            <constraint firstItem="Sbr-oK-0we" firstAttribute="leading" secondItem="RWv-2y-gfT" secondAttribute="leading" constant="16" id="vel-hp-pbA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GL1-uf-tAy"/>
+                    <connections>
+                        <outlet property="btnActionSheet" destination="JxP-iJ-5RR" id="fHc-fd-5Nk"/>
+                        <outlet property="lblOption" destination="Sbr-oK-0we" id="XHQ-Ll-2H3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sR4-zT-yTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-917.60000000000002" y="2115.2923538230884"/>
         </scene>
         <!--Timer定时器-->
         <scene sceneID="OZC-YO-TqF">
@@ -480,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpu-9o-4v0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2447" y="1916"/>
+            <point key="canvasLocation" x="-2631" y="2091"/>
         </scene>
     </scenes>
 </document>
