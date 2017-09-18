@@ -920,3 +920,65 @@ static NSString *celIdentifier = @"RACTableViewCell";
 
 
 
+
+
+
+
+
+
+#9---->RACDatePickerView日期选择器
+
+
+```
+
+#import "RACDatePickerViewController.h"
+
+@interface RACDatePickerViewController ()
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldDate;
+
+@end
+
+@implementation RACDatePickerViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    //信号双向绑定
+    RACChannelTerminal *dateTerminal = [self.datePicker rac_newDateChannelWithNilValue:[NSDate date]];
+    RACChannelTerminal *textTerminal = [self.textFieldDate rac_newTextChannel];
+    
+    [[dateTerminal map:^id (id   value) {
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        return [dateFormatter stringFromDate:value];
+        
+    }]subscribe:textTerminal];
+    
+    
+    
+    
+}
+
+
+
+```
+
+
+
+
+
+
+
+
+#效果图:
+
+
+
+![Image](https://github.com/KBvsMJ/ReactiveCocoaDemo/blob/master/SXJFRAC_MVVMDEMO/demo/8.gif)
+
+
+
+
+
